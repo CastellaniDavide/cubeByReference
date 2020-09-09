@@ -15,8 +15,22 @@
  */
 #include <stdio.h>
 
-int main() {
-	// printf() displays the string inside quotation
-	printf("cubeByReference");
+void cube(int *nPtr);
+
+int main()
+{
+	int n = 10;
+
+	printf("%d^3 = ", n);
+
+	cube(&n);
+
+	printf("%d\n", n);
+
 	return 0;
+}
+
+void cube(int *nPtr)
+{
+	*nPtr = *nPtr * *nPtr * *nPtr;
 }
